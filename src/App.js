@@ -60,6 +60,7 @@ class App extends React.Component {
     }
     handleKeyPress(event){
       let keycode = (event.keyCode ? event.keyCode : event.which);
+      console.log(keycode);
       if (keycode === 49) {
             this.Show('1');
        } else if (keycode === 50) {
@@ -80,17 +81,17 @@ class App extends React.Component {
             this.Show('9');
         } else if (keycode === 48) {
             this.Show('0');
-        } else if (keycode === 97) {
+        } else if (keycode === 127) {
             this.reset();
-        } else if (keycode === 99) {
+        } else if (keycode === 8 ) {
             this.Bksp();
-        } else if (keycode === 61 || keycode === 13) {
+        } else if (keycode === 13 || keycode === 61) {
             this.Operations('=');
         } else if (keycode === 43) {
             this.Operations('+');
         } else if (keycode === 45) {
             this.Operations('-');
-        } else if (keycode === 42 || keycode === 120) {
+        } else if (keycode === 42) {
             this.Operations('*');
         } else if (keycode === 47) {
             this.Operations('/');

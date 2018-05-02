@@ -1,0 +1,47 @@
+body{
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.App{
+	width: 100%;
+	max-width: 400px;
+	display: block;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #010101;
+	border-radius: 12px;
+	background: url(./img/bg.jpg);
+	background-repeat: repeat;
+}
+
+h1{
+	text-align: right;
+	display: block;
+	width: 100%;
+	max-width: 370px;
+	padding: 10px;
+	height: 40px;
+	margin: 10px auto;
+	border: 1px solid #010101;
+	font-size: 2em;
+	border-radius: 12px;
+	background-color:#ffffff;
+}
+
+button{
+	margin: 5px;
+	padding: 15px 2px;
+	font-weight: bold;
+	display: inline-block;
+	background-color: #ffffff;
+	width: 90px;
+	border: 1px solid #010101;
+	outline: 0;
+	border-radius: 12px;
+}
+.large{
+width: 190px;
+
+}

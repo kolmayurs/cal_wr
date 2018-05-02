@@ -14,6 +14,7 @@ class App extends React.Component {
       document.addEventListener("keypress", this.handleKeyPress, true);
     }
     Show(evalue){
+      console.log('Display: ' +this.state.display + ' || Value: ' + this.state.value + ' || Operator: ' + this.state.Operator );
       let num = Number(this.state.display);
       if(num !== 0){
         this.setState({display: this.state.display + evalue})
@@ -23,9 +24,11 @@ class App extends React.Component {
       }
     }
     reset(){
-      this.setState({display: 0, value: 0, Operator: ''})
+      console.log('Display: ' +this.state.display + ' || Value: ' + this.state.value + ' || Operator: ' + this.state.Operator );
+      this.setState({display: 0, value: 0, Operator: '='})
     }
     Bksp(){
+      console.log('Display: ' +this.state.display + ' || Value: ' + this.state.value + ' || Operator: ' + this.state.Operator );
       if(this.state.display === ''|| this.state.display.length === 1 || this.state.display === 0){
         this.setState({display : 0})
       }
@@ -36,22 +39,23 @@ class App extends React.Component {
       
     }
     Operations(evalue){
+      console.log('Display: ' +this.state.display + ' || Value: ' + this.state.value + ' || Operator: ' + this.state.Operator );
       if(evalue === '='){
           if(this.state.Operator === '+'){
             let value= Number(this.state.value) + Number(this.state.display);
-            this.setState({nextNumber: Number(this.state.display),display: value,Operator:''})
+            this.setState({display: value,Operator:''})
           }
           if(this.state.Operator === '-'){
             let value= Number(this.state.value) - Number(this.state.display);
-            this.setState({nextNumber: Number(this.state.display),display: value,Operator:''})
+            this.setState({display: value,Operator:''})
           }
           if(this.state.Operator === '/'){
             let value= Number(this.state.value) / Number(this.state.display);
-            this.setState({nextNumber: Number(this.state.display),display: value,Operator:''})
+            this.setState({display: value,Operator:''})
           }
           if(this.state.Operator === '*'){
             let value= Number(this.state.value) * Number(this.state.display);
-            this.setState({nextNumber: Number(this.state.display),display: value,Operator:''})
+            this.setState({display: value,Operator:''})
           }
         }
           else{
@@ -59,8 +63,10 @@ class App extends React.Component {
         }
     }
     handleKeyPress(event){
+
+      console.log('Display: ' +this.state.display + ' || Value: ' + this.state.value + ' || Operator: ' + this.state.Operator );
       let keycode = (event.keyCode ? event.keyCode : event.which);
-      console.log(keycode);
+      console.log('Key Code === ' + keycode);
       if (keycode === 49) {
             this.Show('1');
        } else if (keycode === 50) {
@@ -83,7 +89,7 @@ class App extends React.Component {
             this.Show('0');
         } else if (keycode === 127) {
             this.reset();
-        } else if (keycode === 8 ) {
+        } else if (keycode === 8 || keycode === 220 ) {
             this.Bksp();
         } else if (keycode === 13 || keycode === 61) {
             this.Operations('=');
